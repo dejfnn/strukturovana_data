@@ -12,6 +12,7 @@ NASTROJE/             → Python nástroje
   md_to_html.py       → Konvertor MD → HTML (pro Word kompatibilitu)
 OUTPUT/{KLIENT}/      → Výstupní adresáře klientských projektů (UPPERCASE)
 UNIVERZALNI-NAVOD.md  → Detailní referenční příručka (1000+ řádků)
+requirements.txt      → Python závislosti (pip install -r requirements.txt)
 ```
 
 ## Workflow — 5 kroků

@@ -1,0 +1,6 @@
+# Závislosti pro nástroje strukturovaných dat JSON-LD
+# Instalace: pip install -r requirements.txt
+
+# md_to_html.py — konverze Markdown do HTML (pro Word kompatibilitu)
+markdown>=3.5
+Pygments>=2.17        # pro codehilite extension (zvýrazňování syntaxe)

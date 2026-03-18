@@ -10,8 +10,18 @@ description: "Analýza webu klienta pro strukturovaná data JSON-LD. Použij kdy
 - **Volitelné:**
   - Odkaz na sitemap.xml
   - Seznam typových stránek k analýze (vzorky URL)
+  - Typy stránek na webu (např. produkty, kategorie, blog, FAQ...)
 
 ## Postup
+
+### 0. Dotaz na typové stránky
+
+Pokud uživatel **neposkytl** typy stránek ani vzorkové URL:
+1. **Zeptej se:** "Jaké typy stránek web obsahuje? (např. produkty, kategorie, blog, služby, FAQ, pobočky...) Pokud nevíte, můžu to zjistit automaticky ze sitemap."
+2. Pokud uživatel odpoví — použij jeho odpověď jako vodítko pro krok 4 (identifikace typů stránek). Stále proveď crawling/sitemap analýzu, ale zaměř se na potvrzení a doplnění uživatelem zadaných typů.
+3. Pokud uživatel řekne, že neví — pokračuj s automatickou detekcí (krok 2+).
+
+Pokud uživatel **poskytl** typy stránek nebo vzorkové URL v zadání — **neptat se znovu**, rovnou pokračuj.
 
 ### 1. Příprava projektu
 
