@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.sico.cz/#organization",
+  "name": "SICO RENT s.r.o.",
+  "url": "https://www.sico.cz",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.sico.cz/wp-content/themes/sico/images/logo.svg",
+    "width": "250",
+    "height": "60"
+  },
+  "description": "Specialista na pronájem pracovních plošin s více než 20 lety na trhu. 600 strojů ihned k dispozici, nejširší sortiment v ČR.",
+  "email": "sico@sico.cz",
+  "telephone": "+420724204100",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jenštejn",
+    "addressRegion": "Praha",
+    "addressCountry": "CZ"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+420724204100",
+      "contactType": "Pronájem",
+      "areaServed": "CZ",
+      "availableLanguage": ["cs", "en", "de"]
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/sico.cz",
+    "https://www.instagram.com/sico_rent_pracovni_plosiny/",
+    "https://www.youtube.com/channel/UCnpcIYojppT48ea2pzVaqlg",
+    "https://www.linkedin.com/company/sico-rent"
+  ]
+}

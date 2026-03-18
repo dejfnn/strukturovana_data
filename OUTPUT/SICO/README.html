@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strukturovaná data JSON-LD pro SICO RENT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #95a5a6;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="strukturovana-data-json-ld-pro-sico-rent">Strukturovaná data JSON-LD pro SICO RENT</h1>
+<h2 id="vytvorene-soubory">Vytvořené soubory</h2>
+<h3 id="hlavni-dokumentace">📄 Hlavní dokumentace</h3>
+<ul>
+<li><strong>strukturovana-data-sico.md</strong> - Kompletní přehled všech strukturovaných dat s reálnými údaji ze stránek SICO</li>
+</ul>
+<h3 id="validacni-nastroj">🐍 Validační nástroj</h3>
+<ul>
+<li><strong>validate_schema.py</strong> - Python skript pro lokální validaci JSON-LD dat</li>
+<li><strong>test-homepage-organization.json</strong> - Testovací soubor pro Organization schema</li>
+<li><strong>test-product.json</strong> - Testovací soubor pro Product schema</li>
+<li><strong>test-article.json</strong> - Testovací soubor pro Article schema</li>
+</ul>
+<hr />
+<h2 id="obsah-strukturovana-data-sicomd">📋 Obsah strukturovana-data-sico.md</h2>
+<p>Dokument obsahuje strukturovaná data pro následující typy stránek:</p>
+<h3 id="1-homepage-httpswwwsicocz">1. <strong>HOMEPAGE</strong> (https://www.sico.cz/)</h3>
+<ul>
+<li>✓ Organization Schema</li>
+<li>✓ WebSite Schema (s SearchAction)</li>
+</ul>
+<h3 id="2-kategorie-produktu-httpswwwsicoczkategorienuzkove">2. <strong>KATEGORIE PRODUKTŮ</strong> (https://www.sico.cz/kategorie/nuzkove/)</h3>
+<ul>
+<li>✓ CollectionPage Schema</li>
+<li>✓ BreadcrumbList Schema</li>
+<li>✓ ItemList Schema (seznam produktů)</li>
+</ul>
+<h3 id="3-produktova-stranka-httpswwwsicoczplosinyoptimum-6">3. <strong>PRODUKTOVÁ STRÁNKA</strong> (https://www.sico.cz/plosiny/optimum-6/)</h3>
+<ul>
+<li>✓ Product Schema</li>
+<li>✓ BreadcrumbList Schema</li>
+<li>✓ Service Schema (doplňkové služby)</li>
+</ul>
+<h3 id="4-zajimavosti-clanek-httpswwwsicoczautoplosina-man-tgl-palfinger-p300ks-na-pontonu">4. <strong>ZAJÍMAVOSTI - ČLÁNEK</strong> (https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/)</h3>
+<ul>
+<li>✓ Article Schema</li>
+<li>✓ BreadcrumbList Schema</li>
+</ul>
+<h3 id="5-zajimavosti-hlavni-stranka-httpswwwsicoczradce-sico-rent">5. <strong>ZAJÍMAVOSTI - HLAVNÍ STRÁNKA</strong> (https://www.sico.cz/radce-sico-rent/)</h3>
+<ul>
+<li>✓ Blog Schema</li>
+<li>✓ ItemList Schema (seznam článků)</li>
+</ul>
+<hr />
+<h2 id="jak-validovat-strukturovana-data">🔍 Jak validovat strukturovaná data</h2>
+<h3 id="metoda-1-online-validatory-doporuceno">Metoda 1: Online validátory (DOPORUČENO)</h3>
+<h4 id="google-rich-results-test">Google Rich Results Test</h4>
+<ol>
+<li>Otevřete https://search.google.com/test/rich-results</li>
+<li>Vložte JSON-LD kód nebo URL stránky</li>
+<li>Klikněte na "Test URL" nebo "Test CODE"</li>
+<li>Zkontrolujte výsledky a případné chyby/varování</li>
+</ol>
+<h4 id="schemaorg-validator">Schema.org Validator</h4>
+<ol>
+<li>Otevřete https://validator.schema.org/</li>
+<li>Vložte JSON-LD kód</li>
+<li>Klikněte na "VALIDATE"</li>
+<li>Zkontrolujte výsledky</li>
+</ol>
+<h3 id="metoda-2-lokalni-validace-pomoci-python-skriptu">Metoda 2: Lokální validace pomocí Python skriptu</h3>
+<h4 id="instalace">Instalace</h4>
+<p>Není potřeba žádná instalace - skript používá pouze standardní Python knihovny.</p>
+<h4 id="pouziti">Použití</h4>
+<pre class="codehilite"><code class="language-bash">python validate_schema.py &lt;cesta_k_json_souboru&gt;
+</code></pre>
+
+<h4 id="priklady">Příklady</h4>
+<pre class="codehilite"><code class="language-bash"># Validace Organization schema
+python validate_schema.py test-homepage-organization.json
+
+# Validace Product schema
+python validate_schema.py test-product.json
+
+# Validace Article schema
+python validate_schema.py test-article.json
+</code></pre>
+
+<h4 id="co-validuje">Co validuje?</h4>
+<ul>
+<li>✓ Základní JSON syntaxe</li>
+<li>✓ Přítomnost povinných polí (@context, @type, name, url, atd.)</li>
+<li>✓ Validita URL adres (musí začínat http:// nebo https://)</li>
+<li>✓ Správnost @context (musí obsahovat schema.org)</li>
+<li>✓ Podporu pro @graph strukturu</li>
+</ul>
+<h4 id="omezeni">Omezení</h4>
+<p>⚠️ Tento skript provádí pouze <strong>základní validaci</strong>. Pro komplexní kontrolu použijte online validátory.</p>
+<hr />
+<h2 id="jak-implementovat-na-web">🚀 Jak implementovat na web</h2>
+<h3 id="1-vlozeni-json-ld-do-html">1. Vložení JSON-LD do HTML</h3>
+<p>Vložte JSON-LD do <code>&lt;head&gt;</code> sekce nebo na konec <code>&lt;body&gt;</code> před <code>&lt;/body&gt;</code>:</p>
+<pre class="codehilite"><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;SICO RENT s.r.o.&quot;,
+  ...
+}
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="2-kombinace-vice-schemat">2. Kombinace více schémat</h3>
+<p>Pro kombinaci více schémat na jedné stránce použijte <code>@graph</code>:</p>
+<pre class="codehilite"><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      ...
+    },
+    {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      ...
+    }
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="3-propojeni-schemat-pomoci-id">3. Propojení schémat pomocí @id</h3>
+<p>Pro propojení schémat použijte <code>@id</code> a reference:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;,
+      &quot;name&quot;: &quot;SICO RENT s.r.o.&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;Product&quot;,
+      &quot;seller&quot;: {
+        &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h2 id="kontrolni-seznam-po-implementaci">✅ Kontrolní seznam po implementaci</h2>
+<ul>
+<li>[ ] Implementovat Organization + WebSite schema na homepage</li>
+<li>[ ] Implementovat CollectionPage + BreadcrumbList + ItemList na kategorie</li>
+<li>[ ] Implementovat Product + Offer + BreadcrumbList na produktové stránky</li>
+<li>[ ] Implementovat Article + BreadcrumbList na články</li>
+<li>[ ] Implementovat Blog + ItemList na hlavní stránku Zajímavostí</li>
+<li>[ ] Validovat všechna schémata v https://validator.schema.org/</li>
+<li>[ ] Otestovat v https://search.google.com/test/rich-results</li>
+<li>[ ] Zkontrolovat v Google Search Console (sekce Vylepšení)</li>
+<li>[ ] Otestovat mobilní zobrazení</li>
+<li>[ ] Monitorovat výskyt rich snippets ve vyhledávání (2-4 týdny)</li>
+</ul>
+<hr />
+<h2 id="ocekavane-vysledky">📊 Očekávané výsledky</h2>
+<h3 id="google-rich-results-test_1">Google Rich Results Test</h3>
+<ul>
+<li><strong>Organization</strong>: ✓ Správně rozpoznaná firma</li>
+<li><strong>WebSite</strong>: ✓ Vyhledávací pole v rich results</li>
+<li><strong>Product</strong>: ✓ Zobrazení ceny, dostupnosti</li>
+<li><strong>Article</strong>: ✓ Rich snippet s obrázkem a datem</li>
+<li><strong>BreadcrumbList</strong>: ✓ Navigační drobečková cesta</li>
+</ul>
+<h3 id="schemaorg-validator_1">Schema.org Validator</h3>
+<ul>
+<li>✓ Všechna schémata by měla projít bez chyb</li>
+<li>⚠️ Případná varování jsou obvykle doporučení, ne kritické chyby</li>
+</ul>
+<hr />
+<h2 id="reseni-problemu">🔧 Řešení problémů</h2>
+<h3 id="caste-chyby">Časté chyby</h3>
+<h4 id="1-chybejici-povinne-pole">1. Chybějící povinné pole</h4>
+<pre class="codehilite"><code>✗ Chybí povinné pole: image
+</code></pre>
+
+<p><strong>Řešení</strong>: Přidejte chybějící pole do JSON-LD</p>
+<h4 id="2-neplatna-url">2. Neplatná URL</h4>
+<pre class="codehilite"><code>✗ Neplatná URL v logo.url: /images/logo.png
+</code></pre>
+
+<p><strong>Řešení</strong>: Použijte absolutní URL: <code>https://www.sico.cz/images/logo.png</code></p>
+<h4 id="3-chybny-format-data">3. Chybný formát data</h4>
+<pre class="codehilite"><code>✗ Neplatný formát datePublished
+</code></pre>
+
+<p><strong>Řešení</strong>: Použijte ISO 8601 formát: <code>2025-09-15</code></p>
+<h4 id="4-chybejici-context">4. Chybějící @context</h4>
+<pre class="codehilite"><code>✗ Chybí @context
+</code></pre>
+
+<p><strong>Řešení</strong>: Přidejte <code>"@context": "https://schema.org"</code></p>
+<hr />
+<h2 id="dodatecne-zdroje">📚 Dodatečné zdroje</h2>
+<h3 id="dokumentace">Dokumentace</h3>
+<ul>
+<li><a href="https://schema.org/docs/documents.html">Schema.org Documentation</a></li>
+<li><a href="https://developers.google.com/search/docs/appearance/structured-data">Google Search Central - Structured Data</a></li>
+<li><a href="https://json-ld.org/spec/latest/json-ld/">JSON-LD Specification</a></li>
+</ul>
+<h3 id="nastroje">Nástroje</h3>
+<ul>
+<li><a href="https://search.google.com/test/rich-results">Google Rich Results Test</a></li>
+<li><a href="https://validator.schema.org/">Schema.org Validator</a></li>
+<li><a href="https://search.google.com/search-console">Google Search Console</a></li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li><a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies">Google's Structured Data Guidelines</a></li>
+<li><a href="https://schema.org/docs/gs.html">Schema.org Best Practices</a></li>
+</ul>
+<hr />
+<h2 id="tipy-pro-sico-rent">💡 Tipy pro SICO RENT</h2>
+<h3 id="priorita-implementace">Priorita implementace</h3>
+<ol>
+<li><strong>Homepage</strong> - Organization + WebSite (nejvyšší priorita)</li>
+<li><strong>Produktové stránky</strong> - Product + Offer (vysoká priorita)</li>
+<li><strong>Kategorie</strong> - CollectionPage + ItemList (střední priorita)</li>
+<li><strong>Články</strong> - Article + Blog (střední priorita)</li>
+</ol>
+<h3 id="rozsirena-funkcnost">Rozšířená funkčnost</h3>
+<ul>
+<li>Přidejte <strong>FAQPage</strong> schema, pokud máte FAQ sekci</li>
+<li>Přidejte <strong>VideoObject</strong> schema pro instruktážní videa</li>
+<li>Přidejte <strong>HowTo</strong> schema pro návody k použití</li>
+<li>Zvažte přidání <strong>Review</strong> a <strong>AggregateRating</strong> pro hodnocení</li>
+</ul>
+<h3 id="monitoring">Monitoring</h3>
+<ul>
+<li>Nastavte pravidelnou kontrolu v Google Search Console</li>
+<li>Sledujte CTR (Click-Through Rate) v Google Analytics</li>
+<li>Monitorujte výskyt rich snippets ve vyhledávání</li>
+</ul>
+<hr />
+<h2 id="podpora">📞 Podpora</h2>
+<p>Pro otázky ohledně strukturovaných dat:
+- Google Search Central Help Community: https://support.google.com/webmasters/community
+- Schema.org GitHub Issues: https://github.com/schemaorg/schemaorg/issues</p>
+<hr />
+<p><strong>Datum vytvoření</strong>: 2025-11-12
+<strong>Verze</strong>: 1.0
+<strong>Autor</strong>: Claude Code</p>
+</body>
+</html>

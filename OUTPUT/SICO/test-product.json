@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.sico.cz/plosiny/optimum-6/#product",
+  "name": "Haulotte Optimum 6",
+  "description": "Kompaktní, manévrovatelná nůžková plošina určená pro uzavřené prostory.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Haulotte"
+  },
+  "image": [
+    "https://www.sico.cz/wp-content/uploads/optimum-6-01.jpg",
+    "https://www.sico.cz/wp-content/uploads/optimum-6-02.jpg"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.sico.cz/plosiny/optimum-6/",
+    "priceCurrency": "CZK",
+    "price": "1200",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@id": "https://www.sico.cz/#organization"
+    }
+  }
+}

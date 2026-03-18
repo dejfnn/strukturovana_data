@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{SERVICE_URL}}/#service",
+  "name": "{{SERVICE_NAME}}",
+  "description": "{{SERVICE_DESCRIPTION}}",
+  "url": "{{SERVICE_URL}}",
+  "image": "{{IMAGE_URL}}",
+  "provider": {
+    "@id": "{{BASE_URL}}/#organization"
+  },
+  "serviceType": "{{SERVICE_TYPE}}",
+  "areaServed": {
+    "@type": "Country",
+    "name": "{{COUNTRY_NAME}}"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "{{CATALOG_NAME}}",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{OFFER_NAME_1}}",
+          "description": "{{OFFER_DESCRIPTION_1}}"
+        },
+        "price": "{{PRICE_1}}",
+        "priceCurrency": "{{CURRENCY}}"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{OFFER_NAME_2}}",
+          "description": "{{OFFER_DESCRIPTION_2}}"
+        },
+        "price": "{{PRICE_2}}",
+        "priceCurrency": "{{CURRENCY}}"
+      }
+    ]
+  },
+  "termsOfService": "{{TERMS_URL}}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{RATING_VALUE}}",
+    "reviewCount": "{{REVIEW_COUNT}}",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}

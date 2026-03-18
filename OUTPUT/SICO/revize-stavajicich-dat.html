@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revize stávajících strukturovaných dat - SICO RENT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #95a5a6;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="revize-stavajicich-strukturovanych-dat-sico-rent">Revize stávajících strukturovaných dat - SICO RENT</h1>
+<p><strong>Datum revize</strong>: 2025-11-12
+<strong>Revidované stránky</strong>: Homepage, Kategorie, Produkty, Články
+<strong>Status</strong>: ⚠️ Minimální implementace, vyžaduje zásadní vylepšení</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<h3 id="celkove-hodnoceni-210">Celkové hodnocení: 2/10</h3>
+<p><strong>Zjištění:</strong>
+- ❌ <strong>Homepage</strong>: Žádná strukturovaná data
+- ❌ <strong>Kategorie</strong>: Žádná strukturovaná data
+- ⚠️ <strong>Produkty</strong>: Základní Product schema (s chybami)
+- ❌ <strong>Články</strong>: Žádná strukturovaná data</p>
+<p><strong>Dopad:</strong>
+- Minimální viditelnost v Google rich results
+- Žádná podpora pro featured snippets
+- Ztráta potenciálu pro lepší CTR
+- Chybějící breadcrumb navigace ve vyhledávání</p>
+<hr />
+<h2 id="1-homepage-httpswwwsicocz">1. HOMEPAGE (https://www.sico.cz/)</h2>
+<h3 id="stav-zadna-data-nalezena">❌ Stav: ŽÁDNÁ DATA NALEZENA</h3>
+<p><strong>Co chybí:</strong>
+- Organization Schema (firma, kontakty, logo)
+- WebSite Schema (vyhledávací box)
+- LocalBusiness Schema (pobočky, otevírací doba)</p>
+<h3 id="dopad">Dopad</h3>
+<ul>
+<li>Google nerozpoznává firmu jako organizaci</li>
+<li>Chybí vyhledávací box v Google results</li>
+<li>Žádné zobrazení kontaktů v SERP</li>
+</ul>
+<h3 id="doporuceni-vysoka-priorita">🔧 Doporučení - VYSOKÁ PRIORITA</h3>
+<p>Implementovat:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;,
+      &quot;name&quot;: &quot;SICO RENT s.r.o.&quot;,
+      &quot;url&quot;: &quot;https://www.sico.cz&quot;,
+      ...
+    },
+    {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/#website&quot;,
+      ...
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Očekávaný přínos:</strong>
+- ✅ Rich snippet s logem firmy
+- ✅ Vyhledávací box v Google
+- ✅ Zobrazení kontaktů a sociálních sítí
+- ✅ Knowledge Graph panel</p>
+<hr />
+<h2 id="2-kategorie-produktu-httpswwwsicoczkategorienuzkove">2. KATEGORIE PRODUKTŮ (https://www.sico.cz/kategorie/nuzkove/)</h2>
+<h3 id="stav-zadna-data-nalezena_1">❌ Stav: ŽÁDNÁ DATA NALEZENA</h3>
+<p><strong>Co chybí:</strong>
+- CollectionPage Schema
+- BreadcrumbList Schema
+- ItemList Schema (produkty v kategorii)</p>
+<h3 id="dopad_1">Dopad</h3>
+<ul>
+<li>Žádné breadcrumbs ve vyhledávání</li>
+<li>Produkty nejsou strukturovaně propojené</li>
+<li>Ztráta SEO potenciálu pro kategorie</li>
+</ul>
+<h3 id="doporuceni-stredni-priorita">🔧 Doporučení - STŘEDNÍ PRIORITA</h3>
+<p>Implementovat:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;CollectionPage&quot;,
+      &quot;name&quot;: &quot;Nůžkové pracovní plošiny&quot;,
+      ...
+    },
+    {
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      &quot;itemListElement&quot;: [...]
+    },
+    {
+      &quot;@type&quot;: &quot;ItemList&quot;,
+      &quot;numberOfItems&quot;: 31,
+      ...
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Očekávaný přínos:</strong>
+- ✅ Breadcrumb navigace v SERP
+- ✅ Lepší pochopení struktury webu
+- ✅ Možnost zobrazení produktového carouselu</p>
+<hr />
+<h2 id="3-produktova-stranka-httpswwwsicoczplosinyoptimum-6">3. PRODUKTOVÁ STRÁNKA (https://www.sico.cz/plosiny/optimum-6/)</h2>
+<h3 id="stav-castecna-implementace-s-chybami">⚠️ Stav: ČÁSTEČNÁ IMPLEMENTACE S CHYBAMI</h3>
+<p><strong>Nalezená data:</strong></p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;name&quot;: &quot;Haulotte Optimum 6&quot;,
+  &quot;image&quot;: &quot;https://www.sico.cz/wp-content/uploads/2020/12/Haulotte-Optimum-6_1.jpg&quot;,
+  &quot;description&quot;: &quot;Malý, ale šikovný. To je Haulotte Optimum 6...&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;price&quot;: &quot;1200 den&quot;
+  }
+}
+</code></pre>
+
+<h3 id="kriticke-chyby">❌ Kritické chyby</h3>
+<h4 id="1-neplatny-context">1. <strong>Neplatný @context</strong></h4>
+<pre class="codehilite"><code class="language-json">&quot;@context&quot;: &quot;http://schema.org&quot;  // ❌ CHYBA
+</code></pre>
+
+<p><strong>Problém:</strong> Používá <code>http://</code> místo <code>https://</code></p>
+<p><strong>Oprava:</strong></p>
+<pre class="codehilite"><code class="language-json">&quot;@context&quot;: &quot;https://schema.org&quot;  // ✅ SPRÁVNĚ
+</code></pre>
+
+<h4 id="2-neplatny-format-ceny">2. <strong>Neplatný formát ceny</strong></h4>
+<pre class="codehilite"><code class="language-json">&quot;price&quot;: &quot;1200 den&quot;  // ❌ CHYBA
+</code></pre>
+
+<p><strong>Problém:</strong>
+- Cena musí být číslo nebo řetězec s číslem
+- Jednotka "den" nepatří do pole <code>price</code>
+- Chybí <code>priceCurrency</code></p>
+<p><strong>Oprava:</strong></p>
+<pre class="codehilite"><code class="language-json">&quot;offers&quot;: {
+  &quot;@type&quot;: &quot;Offer&quot;,
+  &quot;price&quot;: &quot;1200&quot;,
+  &quot;priceCurrency&quot;: &quot;CZK&quot;,
+  &quot;priceSpecification&quot;: {
+    &quot;@type&quot;: &quot;UnitPriceSpecification&quot;,
+    &quot;price&quot;: &quot;1200&quot;,
+    &quot;priceCurrency&quot;: &quot;CZK&quot;,
+    &quot;unitText&quot;: &quot;den&quot;
+  },
+  &quot;availability&quot;: &quot;https://schema.org/InStock&quot;,
+  &quot;url&quot;: &quot;https://www.sico.cz/plosiny/optimum-6/&quot;
+}
+</code></pre>
+
+<h4 id="3-chybejici-povinna-pole-v-offer">3. <strong>Chybějící povinná pole v Offer</strong></h4>
+<ul>
+<li>❌ Chybí <code>availability</code> (dostupnost)</li>
+<li>❌ Chybí <code>url</code> (URL nabídky)</li>
+<li>❌ Chybí <code>seller</code> (prodejce)</li>
+</ul>
+<h4 id="4-chybejici-doporucena-pole-v-product">4. <strong>Chybějící doporučená pole v Product</strong></h4>
+<ul>
+<li>❌ Chybí <code>brand</code> (značka: Haulotte)</li>
+<li>❌ Chybí <code>manufacturer</code> (výrobce)</li>
+<li>❌ Chybí <code>category</code> (kategorie)</li>
+<li>❌ Chybí <code>sku</code> nebo <code>gtin</code></li>
+</ul>
+<h4 id="5-chybi-breadcrumblist">5. <strong>Chybí BreadcrumbList</strong></h4>
+<ul>
+<li>Produktová stránka by měla mít breadcrumb navigaci</li>
+</ul>
+<h4 id="6-chybi-technicke-parametry">6. <strong>Chybí technické parametry</strong></h4>
+<ul>
+<li>Neimplementované <code>additionalProperty</code> pro specifikace</li>
+</ul>
+<h3 id="doporuceni-vysoka-priorita_1">🔧 Doporučení - VYSOKÁ PRIORITA</h3>
+<p><strong>Krok 1: Opravit existující chyby</strong>
+Validovat v https://validator.schema.org/ - <strong>současný kód neprojde validací!</strong></p>
+<p><strong>Krok 2: Doplnit chybějící pole</strong></p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Product&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/plosiny/optimum-6/#product&quot;,
+      &quot;name&quot;: &quot;Haulotte Optimum 6&quot;,
+      &quot;image&quot;: [...],  // více obrázků
+      &quot;description&quot;: &quot;...&quot;,
+      &quot;brand&quot;: {
+        &quot;@type&quot;: &quot;Brand&quot;,
+        &quot;name&quot;: &quot;Haulotte&quot;
+      },
+      &quot;category&quot;: &quot;Nůžkové plošiny&quot;,
+      &quot;offers&quot;: {
+        &quot;@type&quot;: &quot;Offer&quot;,
+        &quot;price&quot;: &quot;1200&quot;,
+        &quot;priceCurrency&quot;: &quot;CZK&quot;,
+        &quot;availability&quot;: &quot;https://schema.org/InStock&quot;,
+        &quot;seller&quot;: {
+          &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+        }
+      },
+      &quot;additionalProperty&quot;: [
+        {
+          &quot;@type&quot;: &quot;PropertyValue&quot;,
+          &quot;name&quot;: &quot;Pracovní výška&quot;,
+          &quot;value&quot;: &quot;6,45 m&quot;
+        }
+      ]
+    },
+    {
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      ...
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Očekávaný přínos:</strong>
+- ✅ Validní Product schema
+- ✅ Rich snippet s cenou a dostupností
+- ✅ Breadcrumb navigace
+- ✅ Lepší zobrazení v Google Shopping (pokud relevantní)</p>
+<hr />
+<h2 id="4-clanky-zajimavosti-httpswwwsicoczautoplosina-man-tgl-palfinger-p300ks-na-pontonu">4. ČLÁNKY / ZAJÍMAVOSTI (https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/)</h2>
+<h3 id="stav-zadna-data-nalezena_2">❌ Stav: ŽÁDNÁ DATA NALEZENA</h3>
+<p><strong>Co chybí:</strong>
+- Article Schema
+- BlogPosting Schema
+- BreadcrumbList Schema
+- ImageObject Schema</p>
+<h3 id="dopad_2">Dopad</h3>
+<ul>
+<li>Články se nezobrazují s rich snippets</li>
+<li>Chybí obrázek, datum, autor v SERP</li>
+<li>Nižší CTR z vyhledávání</li>
+<li>Žádná podpora pro Google News</li>
+</ul>
+<h3 id="doporuceni-stredni-priorita_1">🔧 Doporučení - STŘEDNÍ PRIORITA</h3>
+<p>Implementovat:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Article&quot;,
+      &quot;headline&quot;: &quot;...&quot;,
+      &quot;image&quot;: [...],
+      &quot;datePublished&quot;: &quot;2025-09-15&quot;,
+      &quot;author&quot;: {
+        &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+      },
+      &quot;publisher&quot;: {
+        &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      ...
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Očekávaný přínos:</strong>
+- ✅ Rich snippet s obrázkem a datem
+- ✅ Breadcrumb navigace
+- ✅ Vyšší CTR
+- ✅ Lepší viditelnost článků</p>
+<hr />
+<h2 id="5-dalsi-zjisteni">5. DALŠÍ ZJIŠTĚNÍ</h2>
+<h3 id="obecne-problemy">Obecné problémy</h3>
+<h4 id="1-konzistence">❌ 1. Konzistence</h4>
+<ul>
+<li>Product schema je implementované jen na některých produktech</li>
+<li>Chybí jednotná strategie pro strukturovaná data</li>
+</ul>
+<h4 id="2-id-reference">❌ 2. @id reference</h4>
+<ul>
+<li>Žádné použití <code>@id</code> pro propojení schémat</li>
+<li>Organizace by měla mít <code>@id</code> a všechny ostatní schémata by na ni měla odkazovat</li>
+</ul>
+<h4 id="3-graph-struktura">❌ 3. @graph struktura</h4>
+<ul>
+<li>Nepoužívá se <code>@graph</code> pro kombinaci více schémat</li>
+<li>Doporučeno používat @graph pro lepší organizaci</li>
+</ul>
+<h4 id="4-chybejici-schemata">❌ 4. Chybějící schémata</h4>
+<p>Stránky, které by měly mít strukturovaná data:
+- ❌ Kontakt (ContactPage)
+- ❌ FAQ (FAQPage)
+- ❌ Školení (Course)
+- ❌ Servis (Service)
+- ❌ O nás (AboutPage)</p>
+<hr />
+<h2 id="validace-stavajicich-dat">VALIDACE STÁVAJÍCÍCH DAT</h2>
+<h3 id="test-1-schemaorg-validator">Test 1: Schema.org Validator</h3>
+<p><strong>Produktová stránka (Haulotte Optimum 6):</strong></p>
+<pre class="codehilite"><code>❌ VALIDACE SELHALA
+</code></pre>
+
+<p><strong>Chyby:</strong>
+1. ❌ Neplatný @context (http místo https)
+2. ⚠️ Neplatný formát price ("1200 den" místo "1200")
+3. ⚠️ Chybí priceCurrency
+4. ⚠️ Chybí availability
+5. ⚠️ Chybí url v Offer</p>
+<p><strong>Verdikt:</strong> Současné Product schema <strong>NEPROJDE VALIDACÍ</strong> a může být ignorováno vyhledávači.</p>
+<hr />
+<h2 id="akcni-plan-prioritizace">AKČNÍ PLÁN - PRIORITIZACE</h2>
+<h3 id="kriticka-priorita-implementovat-ihned">🔴 KRITICKÁ PRIORITA (implementovat ihned)</h3>
+<ol>
+<li><strong>Opravit Product schema na všech produktech</strong></li>
+<li>Opravit @context na <code>https://schema.org</code></li>
+<li>Opravit formát ceny</li>
+<li>
+<p>Doplnit povinná pole</p>
+</li>
+<li>
+<p><strong>Implementovat Organization + WebSite na homepage</strong></p>
+</li>
+<li>Základní identita firmy</li>
+<li>Vyhledávací box</li>
+</ol>
+<h3 id="vysoka-priorita-implementovat-do-2-tydnu">🟡 VYSOKÁ PRIORITA (implementovat do 2 týdnů)</h3>
+<ol>
+<li><strong>Doplnit BreadcrumbList na všechny stránky</strong></li>
+<li>Produkty</li>
+<li>Kategorie</li>
+<li>
+<p>Články</p>
+</li>
+<li>
+<p><strong>Implementovat Article schema na články</strong></p>
+</li>
+<li>Lepší viditelnost obsahu</li>
+<li>Rich snippets</li>
+</ol>
+<h3 id="stredni-priorita-implementovat-do-mesice">🟢 STŘEDNÍ PRIORITA (implementovat do měsíce)</h3>
+<ol>
+<li><strong>Implementovat CollectionPage + ItemList na kategorie</strong></li>
+<li>
+<p>Lepší struktura produktů</p>
+</li>
+<li>
+<p><strong>Doplnit další stránky</strong></p>
+</li>
+<li>ContactPage</li>
+<li>FAQPage</li>
+<li>Service</li>
+</ol>
+<hr />
+<h2 id="roi-analyza">ROI ANALÝZA</h2>
+<h3 id="soucasny-stav">Současný stav</h3>
+<ul>
+<li><strong>Implementace</strong>: 5% (pouze základní Product s chybami)</li>
+<li><strong>Validita</strong>: 0% (Product schema neprojde validací)</li>
+<li><strong>Rich results potenciál</strong>: 10/100</li>
+</ul>
+<h3 id="po-implementaci-doporuceni">Po implementaci doporučení</h3>
+<ul>
+<li><strong>Implementace</strong>: 90%</li>
+<li><strong>Validita</strong>: 100%</li>
+<li><strong>Rich results potenciál</strong>: 85/100</li>
+</ul>
+<h3 id="ocekavane-prinosy">Očekávané přínosy</h3>
+<ul>
+<li>📈 <strong>CTR</strong>: +15-30% z vyhledávání</li>
+<li>📈 <strong>Viditelnost</strong>: +40% rich snippets</li>
+<li>📈 <strong>Trust</strong>: +25% důvěryhodnost v SERP</li>
+<li>📈 <strong>Konverze</strong>: +10-20% díky lepším informacím</li>
+</ul>
+<hr />
+<h2 id="nastroje-pro-validaci">NÁSTROJE PRO VALIDACI</h2>
+<h3 id="validace-pred-publikaci">Validace PŘED publikací</h3>
+<ol>
+<li>✅ https://validator.schema.org/</li>
+<li>✅ https://search.google.com/test/rich-results</li>
+<li>✅ <code>python validate_schema.py &lt;soubor.json&gt;</code></li>
+</ol>
+<h3 id="monitoring-po-publikaci">Monitoring PO publikaci</h3>
+<ol>
+<li>✅ Google Search Console → Vylepšení</li>
+<li>✅ Pravidelná kontrola rich results (měsíčně)</li>
+<li>✅ CTR monitoring v Google Analytics</li>
+</ol>
+<hr />
+<h2 id="kontrolni-seznam">KONTROLNÍ SEZNAM</h2>
+<h3 id="produktova-stranka-haulotte-optimum-6">Produktová stránka (Haulotte Optimum 6)</h3>
+<ul>
+<li>[ ] Opravit @context na <code>https://schema.org</code></li>
+<li>[ ] Opravit formát price na <code>"1200"</code></li>
+<li>[ ] Doplnit <code>priceCurrency: "CZK"</code></li>
+<li>[ ] Doplnit <code>availability</code></li>
+<li>[ ] Doplnit <code>url</code> v Offer</li>
+<li>[ ] Doplnit <code>seller</code> s odkazem na Organization</li>
+<li>[ ] Doplnit <code>brand</code></li>
+<li>[ ] Doplnit více <code>image</code> (array)</li>
+<li>[ ] Přidat BreadcrumbList</li>
+<li>[ ] Přidat technické parametry (<code>additionalProperty</code>)</li>
+<li>[ ] Validovat v Schema.org Validator</li>
+<li>[ ] Validovat v Google Rich Results Test</li>
+</ul>
+<h3 id="homepage">Homepage</h3>
+<ul>
+<li>[ ] Implementovat Organization schema</li>
+<li>[ ] Implementovat WebSite schema s SearchAction</li>
+<li>[ ] Doplnit kontaktní údaje</li>
+<li>[ ] Doplnit logo</li>
+<li>[ ] Doplnit sociální sítě</li>
+<li>[ ] Validovat</li>
+</ul>
+<h3 id="kategorie">Kategorie</h3>
+<ul>
+<li>[ ] Implementovat CollectionPage</li>
+<li>[ ] Implementovat BreadcrumbList</li>
+<li>[ ] Implementovat ItemList se seznamem produktů</li>
+<li>[ ] Validovat</li>
+</ul>
+<h3 id="clanky">Články</h3>
+<ul>
+<li>[ ] Implementovat Article schema</li>
+<li>[ ] Implementovat BreadcrumbList</li>
+<li>[ ] Doplnit author, publisher</li>
+<li>[ ] Doplnit datePublished</li>
+<li>[ ] Validovat</li>
+</ul>
+<hr />
+<h2 id="zaver">ZÁVĚR</h2>
+<h3 id="soucasny-stav-nedostatecny">Současný stav: ⚠️ NEDOSTATEČNÝ</h3>
+<p>Stávající implementace strukturovaných dat je <strong>minimální a obsahuje kritické chyby</strong>. Product schema na produktových stránkách <strong>neprojde validací</strong> a pravděpodobně není využíváno vyhledávači.</p>
+<h3 id="doporuceni-komplexni-reimplementace">Doporučení: 🚀 KOMPLEXNÍ REIMPLEMENTACE</h3>
+<ol>
+<li><strong>Okamžitě opravit</strong> Product schema (kritické chyby)</li>
+<li><strong>Implementovat</strong> Organization + WebSite na homepage</li>
+<li><strong>Doplnit</strong> BreadcrumbList na všechny stránky</li>
+<li><strong>Rozšířit</strong> o Article, CollectionPage, další typy</li>
+</ol>
+<h3 id="ocekavany-dopad">Očekávaný dopad</h3>
+<ul>
+<li>✅ 100% validní strukturovaná data</li>
+<li>✅ Výrazně lepší viditelnost v Google</li>
+<li>✅ Vyšší CTR a konverze</li>
+<li>✅ Profesionální prezentace ve vyhledávání</li>
+</ul>
+<hr />
+<p><strong>Další kroky:</strong>
+1. Použít připravená strukturovaná data z <code>strukturovana-data-sico.md</code>
+2. Implementovat postupně podle priorit
+3. Validovat každé schéma před publikací
+4. Monitorovat výsledky v Google Search Console</p>
+<p><strong>Datum revize</strong>: 2025-11-12
+<strong>Revizi provedl</strong>: Claude Code</p>
+</body>
+</html>

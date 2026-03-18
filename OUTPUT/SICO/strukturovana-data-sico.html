@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strukturovaná data JSON-LD pro SICO RENT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #95a5a6;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="strukturovana-data-json-ld-pro-sico-rent">Strukturovaná data JSON-LD pro SICO RENT</h1>
+<h2 id="navod-k-validaci">Návod k validaci</h2>
+<ol>
+<li><strong>Google Rich Results Test</strong>: Otevřete https://search.google.com/test/rich-results, vložte JSON-LD kód nebo URL stránky</li>
+<li><strong>Schema.org Validator</strong>: Otevřete https://validator.schema.org/, vložte JSON-LD kód</li>
+</ol>
+<p><strong>DŮLEŽITÉ</strong>: V JSON-LD kódu níže jsou <strong>vytučněné hodnoty</strong> reálná data ze stránek SICO. Při kopírování odstraňte hvězdičky (**) - jsou tam jen pro vizuální zvýraznění.</p>
+<hr />
+<h2 id="homepage">HOMEPAGE</h2>
+<h3 id="url-stranky">URL STRÁNKY</h3>
+<p>https://www.sico.cz/</p>
+<h3 id="organization-schema">Organization Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;,
+  &quot;name&quot;: &quot;**SICO RENT s.r.o.**&quot;,
+  &quot;url&quot;: &quot;**https://www.sico.cz**&quot;,
+  &quot;logo&quot;: {
+    &quot;@type&quot;: &quot;ImageObject&quot;,
+    &quot;url&quot;: &quot;**https://www.sico.cz/wp-content/themes/sico/images/logo.svg**&quot;,
+    &quot;width&quot;: &quot;**250**&quot;,
+    &quot;height&quot;: &quot;**60**&quot;
+  },
+  &quot;description&quot;: &quot;**Specialista na pronájem pracovních plošin s více než 20 lety na trhu. 600 strojů ihned k dispozici, nejširší sortiment v ČR.**&quot;,
+  &quot;email&quot;: &quot;**sico@sico.cz**&quot;,
+  &quot;telephone&quot;: &quot;**+420724204100**&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;addressLocality&quot;: &quot;**Jenštejn**&quot;,
+    &quot;addressRegion&quot;: &quot;**Praha**&quot;,
+    &quot;addressCountry&quot;: &quot;**CZ**&quot;
+  },
+  &quot;contactPoint&quot;: [
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;**+420724204100**&quot;,
+      &quot;contactType&quot;: &quot;**Pronájem**&quot;,
+      &quot;areaServed&quot;: &quot;**CZ**&quot;,
+      &quot;availableLanguage&quot;: [&quot;**cs**&quot;, &quot;**en**&quot;, &quot;**de**&quot;]
+    },
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;**+420602205951**&quot;,
+      &quot;contactType&quot;: &quot;**Dispečink**&quot;,
+      &quot;areaServed&quot;: &quot;**CZ**&quot;,
+      &quot;availableLanguage&quot;: [&quot;**cs**&quot;]
+    }
+  ],
+  &quot;sameAs&quot;: [
+    &quot;**https://www.facebook.com/sico.cz**&quot;,
+    &quot;**https://www.instagram.com/sico_rent_pracovni_plosiny/**&quot;,
+    &quot;**https://www.youtube.com/channel/UCnpcIYojppT48ea2pzVaqlg**&quot;,
+    &quot;**https://www.linkedin.com/company/sico-rent**&quot;
+  ]
+}
+</code></pre>
+
+<h3 id="website-schema-s-searchaction">WebSite Schema (s SearchAction)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebSite&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/#website&quot;,
+  &quot;url&quot;: &quot;**https://www.sico.cz**&quot;,
+  &quot;name&quot;: &quot;**SICO RENT - Pronájem pracovních plošin**&quot;,
+  &quot;description&quot;: &quot;**Pronájem pracovních plošin, vysokozdvižných vozíků, manipulátorů a dalších pracovních zařízení**&quot;,
+  &quot;publisher&quot;: {
+    &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+  },
+  &quot;inLanguage&quot;: [&quot;**cs-CZ**&quot;, &quot;**en-GB**&quot;, &quot;**de-DE**&quot;],
+  &quot;potentialAction&quot;: {
+    &quot;@type&quot;: &quot;SearchAction&quot;,
+    &quot;target&quot;: {
+      &quot;@type&quot;: &quot;EntryPoint&quot;,
+      &quot;urlTemplate&quot;: &quot;**https://www.sico.cz/?s={search_term_string}**&quot;
+    },
+    &quot;query-input&quot;: &quot;required name=search_term_string&quot;
+  }
+}
+</code></pre>
+
+<hr />
+<h2 id="kategorie-produktu">KATEGORIE PRODUKTŮ</h2>
+<h3 id="url-stranky_1">URL STRÁNKY</h3>
+<p>https://www.sico.cz/kategorie/nuzkove/</p>
+<h3 id="collectionpage-itemlist-breadcrumblist-schema-kombinovane">CollectionPage + ItemList + BreadcrumbList Schema (kombinované)</h3>
+<p><strong>Best Practice</strong>: Pro kategorie použijte <code>CollectionPage</code> s <code>mainEntity</code> odkazujícím na <code>ItemList</code>. Tato struktura může aktivovat carousel rich results v Google.</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;CollectionPage&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/kategorie/nuzkove/#collectionpage&quot;,
+      &quot;url&quot;: &quot;**https://www.sico.cz/kategorie/nuzkove/**&quot;,
+      &quot;name&quot;: &quot;**Pronájem Nůžkových Pracovních Plošin**&quot;,
+      &quot;description&quot;: &quot;**Nůžkové plošiny vhodné především pro vnitřní práce na pevném, rovném podkladu. Dieselové varianty s pohonem všech kol a hydraulickými opěrami zvládají obtížný terén. Typické využití: rekonstrukce, stavby, montáže a práce ve skladech.**&quot;,
+      &quot;about&quot;: {
+        &quot;@type&quot;: &quot;Product&quot;,
+        &quot;name&quot;: &quot;**Nůžkové pracovní plošiny**&quot;
+      },
+      &quot;publisher&quot;: {
+        &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+      },
+      &quot;breadcrumb&quot;: {
+        &quot;@id&quot;: &quot;https://www.sico.cz/kategorie/nuzkove/#breadcrumb&quot;
+      },
+      &quot;mainEntity&quot;: {
+        &quot;@type&quot;: &quot;ItemList&quot;,
+        &quot;itemListOrder&quot;: &quot;https://schema.org/ItemListUnordered&quot;,
+        &quot;numberOfItems&quot;: **31**,
+        &quot;itemListElement&quot;: [
+          {
+            &quot;@type&quot;: &quot;ListItem&quot;,
+            &quot;position&quot;: 1,
+            &quot;name&quot;: &quot;**Haulotte Optimum 6**&quot;,
+            &quot;url&quot;: &quot;**https://www.sico.cz/plosiny/optimum-6/**&quot;
+          },
+          {
+            &quot;@type&quot;: &quot;ListItem&quot;,
+            &quot;position&quot;: 2,
+            &quot;name&quot;: &quot;**Genie GS 6**&quot;,
+            &quot;url&quot;: &quot;**https://www.sico.cz/plosiny/gs-6/**&quot;
+          },
+          {
+            &quot;@type&quot;: &quot;ListItem&quot;,
+            &quot;position&quot;: 3,
+            &quot;name&quot;: &quot;**Haulotte Compact 12**&quot;,
+            &quot;url&quot;: &quot;**https://www.sico.cz/plosiny/haulotte-compact-12/**&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      &quot;@id&quot;: &quot;https://www.sico.cz/kategorie/nuzkove/#breadcrumb&quot;,
+      &quot;itemListElement&quot;: [
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 1,
+          &quot;name&quot;: &quot;**Úvod**&quot;,
+          &quot;item&quot;: &quot;**https://www.sico.cz/**&quot;
+        },
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 2,
+          &quot;name&quot;: &quot;**Pronájem**&quot;,
+          &quot;item&quot;: &quot;**https://www.sico.cz/pronajem/**&quot;
+        },
+        {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 3,
+          &quot;name&quot;: &quot;**Nůžkové pracovní plošiny**&quot;,
+          &quot;item&quot;: &quot;**https://www.sico.cz/kategorie/nuzkove/**&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h2 id="produktova-stranka">PRODUKTOVÁ STRÁNKA</h2>
+<h3 id="url-stranky_2">URL STRÁNKY</h3>
+<p>https://www.sico.cz/plosiny/optimum-6/</p>
+<h3 id="product-schema">Product Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/plosiny/optimum-6/#product&quot;,
+  &quot;name&quot;: &quot;**Haulotte Optimum 6**&quot;,
+  &quot;description&quot;: &quot;**Kompaktní, manévrovatelná nůžková plošina určená pro uzavřené prostory. Šířka průchodu 0,76 metru umožňuje průchod standardními dveřmi a poloměr otáčení 1,5 metru zajišťuje výjimečnou pohyblivost v těsných prostorách.**&quot;,
+  &quot;brand&quot;: {
+    &quot;@type&quot;: &quot;Brand&quot;,
+    &quot;name&quot;: &quot;**Haulotte**&quot;
+  },
+  &quot;manufacturer&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;**Haulotte**&quot;
+  },
+  &quot;image&quot;: [
+    &quot;**https://www.sico.cz/wp-content/uploads/optimum-6-01.jpg**&quot;,
+    &quot;**https://www.sico.cz/wp-content/uploads/optimum-6-02.jpg**&quot;,
+    &quot;**https://www.sico.cz/wp-content/uploads/optimum-6-03.jpg**&quot;,
+    &quot;**https://www.sico.cz/wp-content/uploads/optimum-6-04.jpg**&quot;
+  ],
+  &quot;category&quot;: &quot;**Nůžkové plošiny**&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;url&quot;: &quot;**https://www.sico.cz/plosiny/optimum-6/**&quot;,
+    &quot;priceCurrency&quot;: &quot;**CZK**&quot;,
+    &quot;price&quot;: &quot;**1200**&quot;,
+    &quot;priceSpecification&quot;: {
+      &quot;@type&quot;: &quot;UnitPriceSpecification&quot;,
+      &quot;price&quot;: &quot;**1200**&quot;,
+      &quot;priceCurrency&quot;: &quot;**CZK**&quot;,
+      &quot;unitText&quot;: &quot;**den**&quot;
+    },
+    &quot;availability&quot;: &quot;https://schema.org/InStock&quot;,
+    &quot;seller&quot;: {
+      &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+    },
+    &quot;businessFunction&quot;: &quot;http://purl.org/goodrelations/v1#LeaseOut&quot;
+  },
+  &quot;additionalProperty&quot;: [
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Pracovní výška**&quot;,
+      &quot;value&quot;: &quot;**6,45 m**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Nosnost plošiny**&quot;,
+      &quot;value&quot;: &quot;**280 kg**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Rozměry plošiny**&quot;,
+      &quot;value&quot;: &quot;**1,65 m (2,57 m rozšířená) × 0,7 m**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Hmotnost stroje**&quot;,
+      &quot;value&quot;: &quot;**1 335 kg**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Šířka průjezdu**&quot;,
+      &quot;value&quot;: &quot;**0,76 m**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Výška průjezdu**&quot;,
+      &quot;value&quot;: &quot;**1,91 m**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Výdrž baterie**&quot;,
+      &quot;value&quot;: &quot;**až 10 hodin**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Typ pohonu**&quot;,
+      &quot;value&quot;: &quot;**Akumulátorový**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;PropertyValue&quot;,
+      &quot;name&quot;: &quot;**Terén**&quot;,
+      &quot;value&quot;: &quot;**Pevný, rovný povrch (interiér/exteriér)**&quot;
+    }
+  ],
+  &quot;audience&quot;: {
+    &quot;@type&quot;: &quot;PeopleAudience&quot;,
+    &quot;audienceType&quot;: &quot;**Stavební firmy, montážní firmy, sklady**&quot;
+  }
+}
+</code></pre>
+
+<h3 id="breadcrumblist-schema">BreadcrumbList Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/plosiny/optimum-6/#breadcrumb&quot;,
+  &quot;itemListElement&quot;: [
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 1,
+      &quot;name&quot;: &quot;**Úvod**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 2,
+      &quot;name&quot;: &quot;**Pronájem**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/pronajem/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 3,
+      &quot;name&quot;: &quot;**Pracovní plošiny**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/pronajem/pracovni-plosiny/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 4,
+      &quot;name&quot;: &quot;**Haulotte Optimum 6**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/plosiny/optimum-6/**&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="service-schema-doplnkove-sluzby">Service Schema (Doplňkové služby)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Service&quot;,
+  &quot;serviceType&quot;: &quot;**Pronájem pracovních plošin s kompletním servisem**&quot;,
+  &quot;provider&quot;: {
+    &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+  },
+  &quot;areaServed&quot;: {
+    &quot;@type&quot;: &quot;Country&quot;,
+    &quot;name&quot;: &quot;**Česká republika**&quot;
+  },
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;priceCurrency&quot;: &quot;**CZK**&quot;,
+    &quot;availability&quot;: &quot;https://schema.org/InStock&quot;
+  },
+  &quot;termsOfService&quot;: &quot;**https://www.sico.cz/obchodni-podminky/**&quot;,
+  &quot;additionalType&quot;: &quot;RentalService&quot;,
+  &quot;hasOfferCatalog&quot;: {
+    &quot;@type&quot;: &quot;OfferCatalog&quot;,
+    &quot;name&quot;: &quot;**Služby zahrnuté v pronájmu**&quot;,
+    &quot;itemListElement&quot;: [
+      {
+        &quot;@type&quot;: &quot;Offer&quot;,
+        &quot;itemOffered&quot;: {
+          &quot;@type&quot;: &quot;Service&quot;,
+          &quot;name&quot;: &quot;**Dálková diagnostika**&quot;,
+          &quot;description&quot;: &quot;**Vzdálený monitoring a diagnostika strojů**&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Offer&quot;,
+        &quot;itemOffered&quot;: {
+          &quot;@type&quot;: &quot;Service&quot;,
+          &quot;name&quot;: &quot;**Školení obsluhy**&quot;,
+          &quot;description&quot;: &quot;**Profesionální školení pro obsluhu pracovních plošin**&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Offer&quot;,
+        &quot;itemOffered&quot;: {
+          &quot;@type&quot;: &quot;Service&quot;,
+          &quot;name&quot;: &quot;**Mobilní servisní jednotka**&quot;,
+          &quot;description&quot;: &quot;**Výjezd servisního týmu k zákazníkovi**&quot;
+        }
+      },
+      {
+        &quot;@type&quot;: &quot;Offer&quot;,
+        &quot;itemOffered&quot;: {
+          &quot;@type&quot;: &quot;Service&quot;,
+          &quot;name&quot;: &quot;**Asistence obsluhy**&quot;,
+          &quot;description&quot;: &quot;**Odborná pomoc při obsluze strojů**&quot;
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+
+<hr />
+<h2 id="zajimavosti-radce-clanek">ZAJÍMAVOSTI / RADCE (Článek)</h2>
+<h3 id="url-stranky_3">URL STRÁNKY</h3>
+<p>https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/</p>
+<h3 id="article-schema">Article Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/#article&quot;,
+  &quot;headline&quot;: &quot;**Autoplošina MAN TGL Palfinger P300KS na pontonu pod Čechovým mostem**&quot;,
+  &quot;description&quot;: &quot;**Autoplošina MAN TGL Palfinger P300KS se podílela na údržbě konstrukce Čechova mostu. Zařízení bylo umístěno na speciální ponton pro dosažení obtížně přístupných míst nad Vltavou.**&quot;,
+  &quot;image&quot;: [
+    &quot;**https://www.sico.cz/wp-content/uploads/2025/09/SICO-RENT-zajimavosti-man-tgl-palfinger-p300ks-cechuv-most-01.jpg**&quot;,
+    &quot;**https://www.sico.cz/wp-content/uploads/2025/09/SICO-RENT-zajimavosti-man-tgl-palfinger-p300ks-cechuv-most-02.jpg**&quot;,
+    &quot;**https://www.sico.cz/wp-content/uploads/2025/09/SICO-RENT-zajimavosti-man-tgl-palfinger-p300ks-cechuv-most-03.jpg**&quot;
+  ],
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;,
+    &quot;name&quot;: &quot;**SICO RENT s.r.o.**&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;**https://www.sico.cz/wp-content/themes/sico/images/logo.svg**&quot;
+    }
+  },
+  &quot;datePublished&quot;: &quot;**2025-09-15**&quot;,
+  &quot;dateModified&quot;: &quot;**2025-09-15**&quot;,
+  &quot;mainEntityOfPage&quot;: {
+    &quot;@type&quot;: &quot;WebPage&quot;,
+    &quot;@id&quot;: &quot;https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/&quot;
+  },
+  &quot;articleSection&quot;: &quot;**Zajímavá místa**&quot;,
+  &quot;keywords&quot;: [&quot;**autoplošina**&quot;, &quot;**Palfinger P300KS**&quot;, &quot;**Čechův most**&quot;, &quot;**pracovní plošiny**&quot;, &quot;**údržba mostů**&quot;],
+  &quot;about&quot;: [
+    {
+      &quot;@type&quot;: &quot;Thing&quot;,
+      &quot;name&quot;: &quot;**Čechův most**&quot;,
+      &quot;description&quot;: &quot;**Most postavený v letech 1905–1908, nejkratší most přes Vltavu v Praze**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;Product&quot;,
+      &quot;name&quot;: &quot;**Autoplošina MAN TGL Palfinger P300KS**&quot;,
+      &quot;description&quot;: &quot;**Pracovní výška 30 metrů, dosah přes 20 metrů, stranový dosah až 20,5 metru**&quot;
+    }
+  ],
+  &quot;mentions&quot;: [
+    {
+      &quot;@type&quot;: &quot;Place&quot;,
+      &quot;name&quot;: &quot;**Čechův most**&quot;,
+      &quot;geo&quot;: {
+        &quot;@type&quot;: &quot;GeoCoordinates&quot;,
+        &quot;latitude&quot;: &quot;**50.0925**&quot;,
+        &quot;longitude&quot;: &quot;**14.4181**&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="breadcrumblist-schema_1">BreadcrumbList Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/#breadcrumb&quot;,
+  &quot;itemListElement&quot;: [
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 1,
+      &quot;name&quot;: &quot;**Úvod**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 2,
+      &quot;name&quot;: &quot;**Zajímavosti**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/radce-sico-rent/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 3,
+      &quot;name&quot;: &quot;**Autoplošina MAN TGL Palfinger P300KS na pontonu**&quot;,
+      &quot;item&quot;: &quot;**https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/**&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h2 id="zajimavosti-radce-hlavni-stranka-sekce">ZAJÍMAVOSTI / RADCE (Hlavní stránka sekce)</h2>
+<h3 id="url-stranky_4">URL STRÁNKY</h3>
+<p>https://www.sico.cz/radce-sico-rent/</p>
+<h3 id="blog-schema">Blog Schema</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Blog&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/radce-sico-rent/#blog&quot;,
+  &quot;url&quot;: &quot;**https://www.sico.cz/radce-sico-rent/**&quot;,
+  &quot;name&quot;: &quot;**SICO RENT - Zajímavosti**&quot;,
+  &quot;description&quot;: &quot;**Novinky, zajímavá místa, reference a případové studie použití pronajímané techniky**&quot;,
+  &quot;publisher&quot;: {
+    &quot;@id&quot;: &quot;https://www.sico.cz/#organization&quot;
+  },
+  &quot;inLanguage&quot;: &quot;**cs-CZ**&quot;,
+  &quot;blogPost&quot;: [
+    {
+      &quot;@type&quot;: &quot;BlogPosting&quot;,
+      &quot;headline&quot;: &quot;**SICO RENT se stává součástí STATECH s.r.o.**&quot;,
+      &quot;url&quot;: &quot;**https://www.sico.cz/sico-rent-s-r-o-se-stava-soucasti-statech-s-r-o/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;BlogPosting&quot;,
+      &quot;headline&quot;: &quot;**Autoplošina MAN TGL na pontonu pod Čechovým mostem**&quot;,
+      &quot;url&quot;: &quot;**https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/**&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;BlogPosting&quot;,
+      &quot;headline&quot;: &quot;**Kostel sv. Mikuláše a autoplošina SOCAGE 75TJJ**&quot;,
+      &quot;url&quot;: &quot;**https://www.sico.cz/kostel-sv-mikulase-v-chebu-a-autoplosina-socage/**&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="itemlist-schema-seznam-clanku">ItemList Schema (Seznam článků)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;ItemList&quot;,
+  &quot;@id&quot;: &quot;https://www.sico.cz/radce-sico-rent/#itemlist&quot;,
+  &quot;name&quot;: &quot;**Články a zajímavosti SICO RENT**&quot;,
+  &quot;description&quot;: &quot;**98 článků o novinkách, zajímavých místech a referencích**&quot;,
+  &quot;numberOfItems&quot;: **98**,
+  &quot;itemListElement&quot;: [
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 1,
+      &quot;item&quot;: {
+        &quot;@type&quot;: &quot;Article&quot;,
+        &quot;name&quot;: &quot;**SICO RENT se stává součástí STATECH s.r.o.**&quot;,
+        &quot;url&quot;: &quot;**https://www.sico.cz/sico-rent-s-r-o-se-stava-soucasti-statech-s-r-o/**&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 2,
+      &quot;item&quot;: {
+        &quot;@type&quot;: &quot;Article&quot;,
+        &quot;name&quot;: &quot;**Autoplošina MAN TGL na pontonu pod Čechovým mostem**&quot;,
+        &quot;url&quot;: &quot;**https://www.sico.cz/autoplosina-man-tgl-palfinger-p300ks-na-pontonu/**&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 3,
+      &quot;item&quot;: {
+        &quot;@type&quot;: &quot;Article&quot;,
+        &quot;name&quot;: &quot;**Kostel sv. Mikuláše a autoplošina SOCAGE 75TJJ**&quot;,
+        &quot;url&quot;: &quot;**https://www.sico.cz/kostel-sv-mikulase-v-chebu-a-autoplosina-socage/**&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h2 id="poznamky-k-implementaci">POZNÁMKY K IMPLEMENTACI</h2>
+<h3 id="1-kombinace-vice-schemat-na-jedne-strance">1. Kombinace více schémat na jedné stránce</h3>
+<p>Na jedné stránce můžete kombinovat více schémat pomocí <code>@graph</code>:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@type&quot;: &quot;Organization&quot;,
+      ...
+    },
+    {
+      &quot;@type&quot;: &quot;WebSite&quot;,
+      ...
+    },
+    {
+      &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+      ...
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="2-jak-implementovat-na-web">2. Jak implementovat na web</h3>
+<p>Vložte JSON-LD do <code>&lt;head&gt;</code> nebo na konec <code>&lt;body&gt;</code> před <code>&lt;/body&gt;</code>:</p>
+<pre class="codehilite"><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  ...
+}
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>DŮLEŽITÉ</strong>: Při kopírování JSON-LD kódu <strong>odstraňte hvězdičky (**)</strong> - jsou tam jen pro vizuální zvýraznění v této dokumentaci!</p>
+<h3 id="3-caste-chyby-k-vyvarovani-se">3. Časté chyby k vyvarování se</h3>
+<ul>
+<li><strong>Chybějící povinné pole</strong>: Některé typy vyžadují konkrétní pole (např. Product vyžaduje <code>name</code>, <code>image</code>, <code>offers</code>)</li>
+<li><strong>Neplatné URL</strong>: Všechny URL musí být absolutní (začínat <code>http://</code> nebo <code>https://</code>)</li>
+<li><strong>Chybějící @id</strong>: Pokud odkazujete na jiný objekt, použijte <code>@id</code> pro propojení</li>
+<li><strong>Špatný formát data</strong>: Používejte ISO 8601 formát (YYYY-MM-DD)</li>
+</ul>
+<h3 id="4-doporuceni-pro-sico-rent">4. Doporučení pro SICO RENT</h3>
+<ol>
+<li><strong>Homepage</strong>: Implementujte Organization + WebSite schema</li>
+<li><strong>Kategorie</strong>: Implementujte CollectionPage + BreadcrumbList + ItemList</li>
+<li><strong>Produkty</strong>: Implementujte Product + Offer + BreadcrumbList + Service</li>
+<li><strong>Články</strong>: Implementujte Article + BreadcrumbList</li>
+<li><strong>Sekce Zajímavosti</strong>: Implementujte Blog + ItemList</li>
+</ol>
+<h3 id="5-kontrolni-seznam-po-implementaci">5. Kontrolní seznam po implementaci</h3>
+<ul>
+<li>[ ] Validovat všechna schémata v https://validator.schema.org/</li>
+<li>[ ] Otestovat v https://search.google.com/test/rich-results</li>
+<li>[ ] Zkontrolovat v Google Search Console (sekce Vylepšení)</li>
+<li>[ ] Otestovat mobilní zobrazení rich results</li>
+<li>[ ] Monitorovat výskyt rich snippets ve vyhledávání (může trvat 2-4 týdny)</li>
+</ul>
+<hr />
+<h2 id="dodatecne-typy-pro-rozsireni">DODATEČNÉ TYPY PRO ROZŠÍŘENÍ</h2>
+<h3 id="faqpage-pokud-mate-faq-sekci">FAQPage (pokud máte FAQ sekci)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;**Jaká je minimální doba pronájmu?**&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;**Minimální doba pronájmu je 1 den.**&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="videoobject-pokud-mate-videa">VideoObject (pokud máte videa)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;VideoObject&quot;,
+  &quot;name&quot;: &quot;**Jak používat nůžkovou plošinu**&quot;,
+  &quot;description&quot;: &quot;**Instruktážní video pro bezpečné používání nůžkových plošin**&quot;,
+  &quot;thumbnailUrl&quot;: &quot;**https://www.sico.cz/video-thumbnail.jpg**&quot;,
+  &quot;uploadDate&quot;: &quot;**2025-01-15**&quot;,
+  &quot;duration&quot;: &quot;**PT5M30S**&quot;,
+  &quot;contentUrl&quot;: &quot;**https://www.youtube.com/watch?v=...**&quot;
+}
+</code></pre>
+
+<h3 id="howto-navody">HowTo (návody)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;HowTo&quot;,
+  &quot;name&quot;: &quot;**Jak správně používat pracovní plošinu**&quot;,
+  &quot;description&quot;: &quot;**Bezpečnostní postupy pro práci s pracovními plošinami**&quot;,
+  &quot;step&quot;: [
+    {
+      &quot;@type&quot;: &quot;HowToStep&quot;,
+      &quot;name&quot;: &quot;**Kontrola stroje**&quot;,
+      &quot;text&quot;: &quot;**Před použitím zkontrolujte stav stroje...**&quot;
+    }
+  ]
+}
+</code></pre>
+
+<hr />
+<h2 id="validace-ocekavane-vysledky">VALIDACE - OČEKÁVANÉ VÝSLEDKY</h2>
+<h3 id="google-rich-results-test">Google Rich Results Test</h3>
+<ul>
+<li><strong>Organization</strong>: Žádné chyby, správně rozpoznaná firma</li>
+<li><strong>WebSite</strong>: Vyhledávací pole v rich results</li>
+<li><strong>Product</strong>: Zobrazení ceny, dostupnosti a hodnocení (pokud jsou)</li>
+<li><strong>Article</strong>: Rich snippet s obrázkem a datem publikace</li>
+<li><strong>BreadcrumbList</strong>: Navigační drobečková cesta ve výsledcích</li>
+</ul>
+<h3 id="schemaorg-validator">Schema.org Validator</h3>
+<ul>
+<li>Všechna schémata by měla projít bez chyb</li>
+<li>Případná varování jsou obvykle doporučení, ne kritické chyby</li>
+<li>Zkontrolujte, že všechny reference (@id) jsou správně propojené</li>
+</ul>
+<hr />
+<p><strong>Datum vytvoření</strong>: 2025-11-12
+<strong>Autor</strong>: Claude Code
+<strong>Verze</strong>: 1.0</p>
+</body>
+</html>

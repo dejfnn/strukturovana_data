@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{BASE_URL}}/#organization",
+  "name": "{{COMPANY_NAME}}",
+  "url": "{{BASE_URL}}",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{LOGO_URL}}",
+    "width": "{{LOGO_WIDTH}}",
+    "height": "{{LOGO_HEIGHT}}"
+  },
+  "description": "{{DESCRIPTION}}",
+  "email": "{{EMAIL}}",
+  "telephone": "{{PHONE}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{STREET}}",
+    "addressLocality": "{{CITY}}",
+    "addressRegion": "{{REGION}}",
+    "postalCode": "{{ZIP}}",
+    "addressCountry": "{{COUNTRY_CODE}}"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "{{PHONE}}",
+      "contactType": "{{CONTACT_TYPE}}",
+      "areaServed": "{{COUNTRY_CODE}}",
+      "availableLanguage": ["{{LANGUAGE}}"]
+    }
+  ],
+  "sameAs": [
+    "{{FACEBOOK_URL}}",
+    "{{INSTAGRAM_URL}}",
+    "{{LINKEDIN_URL}}",
+    "{{YOUTUBE_URL}}"
+  ]
+}

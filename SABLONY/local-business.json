@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{BASE_URL}}/pobocky/{{BRANCH_SLUG}}/#localbusiness",
+  "name": "{{BRANCH_NAME}}",
+  "description": "{{BRANCH_DESCRIPTION}}",
+  "url": "{{BRANCH_URL}}",
+  "telephone": "{{PHONE}}",
+  "email": "{{EMAIL}}",
+  "image": "{{IMAGE_URL}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{STREET}}",
+    "addressLocality": "{{CITY}}",
+    "postalCode": "{{ZIP}}",
+    "addressCountry": "{{COUNTRY_CODE}}"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{LATITUDE}}",
+    "longitude": "{{LONGITUDE}}"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "{{WEEKDAY_OPENS}}",
+      "closes": "{{WEEKDAY_CLOSES}}"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "{{FRIDAY_OPENS}}",
+      "closes": "{{FRIDAY_CLOSES}}"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "{{SATURDAY_OPENS}}",
+      "closes": "{{SATURDAY_CLOSES}}"
+    }
+  ],
+  "parentOrganization": {
+    "@id": "{{BASE_URL}}/#organization"
+  },
+  "priceRange": "{{PRICE_RANGE}}",
+  "paymentAccepted": "{{PAYMENT_METHODS}}",
+  "currenciesAccepted": "{{CURRENCY}}"
+}
