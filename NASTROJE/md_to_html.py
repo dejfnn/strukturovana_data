@@ -174,10 +174,74 @@ def convert_md_to_html(md_file):
             padding: 2px 4px;
             border-radius: 3px;
         }}
+
+        .json-ld-wrapper {{
+            position: relative;
+        }}
+
+        .btn-download {{
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 6px 16px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+        }}
+
+        .btn-download:hover {{
+            background: #2980b9;
+            text-decoration: none;
+        }}
     </style>
 </head>
 <body>
 {html_content}
+<script>
+document.addEventListener('DOMContentLoaded', function() {{
+    document.querySelectorAll('pre').forEach(function(pre) {{
+        var code = pre.querySelector('code');
+        if (!code) return;
+        var text = code.textContent;
+        if (text.indexOf('"@context"') === -1 && text.indexOf('"@type"') === -1) return;
+
+        // Derive filename from the closest preceding heading
+        var filename = 'schema.json';
+        var el = pre.previousElementSibling;
+        while (el) {{
+            if (/^H[1-6]$/.test(el.tagName)) {{
+                var raw = el.textContent.trim().toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                if (raw) filename = raw + '.json';
+                break;
+            }}
+            el = el.previousElementSibling;
+        }}
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'json-ld-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        var btn = document.createElement('button');
+        btn.className = 'btn-download';
+        btn.textContent = 'Stahnout ' + filename;
+        btn.addEventListener('click', function() {{
+            var clean = text.replace(/\\*\\*/g, '');
+            var blob = new Blob([clean], {{type: 'application/ld+json'}});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }});
+        wrapper.insertBefore(btn, pre);
+    }});
+}});
+</script>
 </body>
 </html>
 """
