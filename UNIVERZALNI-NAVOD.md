@@ -82,7 +82,6 @@ cd NAZEV-DOMENY
 ```
 
 **Příklady názvů složek:**
-- `www.klenota.cz` → `OUTPUT/KLENOTA/`
 - `www.sico.cz` → `OUTPUT/SICO/`
 - `www.firma-example.cz` → `OUTPUT/FIRMA-EXAMPLE/`
 
@@ -566,10 +565,10 @@ Validační skript podporuje hromadnou validaci více souborů najednou:
 
 ```bash
 # Validace všech JSON souborů v projektu
-python NASTROJE/validate_schema.py OUTPUT/KLENOTA/*.json
+python NASTROJE/validate_schema.py OUTPUT/SICO/*.json
 
 # Validace souborů podle vzoru
-python NASTROJE/validate_schema.py OUTPUT/KLENOTA/test-*.json
+python NASTROJE/validate_schema.py OUTPUT/SICO/test-*.json
 
 # Validace více souborů najednou
 python NASTROJE/validate_schema.py soubor1.json soubor2.json soubor3.json

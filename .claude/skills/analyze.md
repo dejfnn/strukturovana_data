@@ -26,7 +26,7 @@ Pokud uživatel **poskytl** typy stránek nebo vzorkové URL v zadání — **ne
 ### 1. Příprava projektu
 
 1. Z URL odvoď název klienta (doména bez www a TLD, UPPERCASE)
-   - `www.klenota.cz` → `KLENOTA`
+   - `www.sico.cz` → `SICO`
    - `www.firma-example.cz` → `FIRMA-EXAMPLE`
 2. Vytvoř adresář `OUTPUT/{KLIENT}/` (pokud neexistuje)
 3. Přidej doménu klienta do `.claude/settings.local.json` → `permissions.allow`:

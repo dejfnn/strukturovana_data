@@ -277,7 +277,7 @@ def main():
         print()
         print("Příklady:")
         print("  python validate_schema.py organization.json")
-        print("  python validate_schema.py OUTPUT/KLENOTA/*.json")
+        print("  python validate_schema.py OUTPUT/SICO/*.json")
         sys.exit(1)
 
     # Získání seznamu souborů (podpora glob vzorů)

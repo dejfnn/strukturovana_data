@@ -51,7 +51,7 @@ Nástroj vždy provádí revizi (krok 2), i u nových projektů. Při updatu exi
 
 ### Pojmenování souborů
 - Adresář klienta: `OUTPUT/{KLIENT}/` — název z domény, UPPERCASE, bez TLD a www
-  - `www.klenota.cz` → `OUTPUT/KLENOTA/`
+  - `www.sico.cz` → `OUTPUT/SICO/`
   - `www.firma-example.cz` → `OUTPUT/FIRMA-EXAMPLE/`
 - Analýza: `analyza-webu.md`
 - Revize: `revize-stavajicich-dat.md`
@@ -91,8 +91,7 @@ Při zahájení nového projektu se doména klienta automaticky přidá do `.cla
 
 ## Referenční projekty
 
-- **KOVINTRADE** (`OUTPUT/KOVINTRADE/`) — nejkomplexnější, 16 souborů, 8+ typů stránek
-- **SICO** (`OUTPUT/SICO/`) — čistý šablonový projekt, dobrý vzor struktury
+- **SICO** (`OUTPUT/SICO/`) — vzorový projekt, dobrý vzor struktury
 
 ## Detailní metodika
 

@@ -10,12 +10,7 @@ Každý projekt má složku pojmenovanou podle domény (velkými písmeny):
 
 ```
 OUTPUT/
-├── SICO/               ← www.sico.cz
-├── KLENOTA/            ← www.klenota.cz
-├── BRUDRA/             ← www.brudra.cz
-├── FASADYSIMEK/        ← www.fasadysimek.cz
-├── KOVINTRADE/         ← www.kovintrade.cz
-├── PERROTTHILLPRAGUE/  ← www.perrotthillprague.cz
+├── SICO/               ← www.sico.cz (vzorový projekt)
 └── [NAZEV-DOMENY]/     ← další projekty...
 ```
 
@@ -172,4 +167,4 @@ Než přidáte projekt do OUTPUT:
 ---
 
 **Aktualizováno**: 2025-12-04
-**Počet projektů**: 6 (SICO, KLENOTA, BRUDRA, FASADYSIMEK, KOVINTRADE, PERROTTHILLPRAGUE)
+**Počet vzorových projektů**: 1 (SICO)
